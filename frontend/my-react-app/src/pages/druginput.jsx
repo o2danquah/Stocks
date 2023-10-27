@@ -25,7 +25,7 @@ const DrugInputs = () => {
     const date = currYear + "-" + currMonth + "-" + currDay;
 
        
-    axios.post("http://localhost:8081/druginput", {drugname, drugcategory, quantity, expirydate, date}).then(res => {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/druginput`, {drugname, drugcategory, quantity, expirydate, date}).then(res => {
       console.log(res);
       navigate("/showdrugs")
 

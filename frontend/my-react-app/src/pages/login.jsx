@@ -22,7 +22,7 @@ const Login = () => {
          event.preventDefault();
          setErrors(Validation(logs));
          if(errors.email === "" && errors.pass === ""){
-            axios.post("http://localhost:8081/", logs).then(res => {
+            axios.post(`${process.env.REACT_APP_BACKEND_URL}/`, logs).then(res => {
              if(res.data === "success"){
                 navigate("/welcomepage")
              }

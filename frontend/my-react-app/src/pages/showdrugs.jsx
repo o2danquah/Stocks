@@ -9,7 +9,7 @@ const Showdrugs = () => {
 
 const [drugs, setValues] = useState([""]);
 useEffect(() => {
-    axios.get("http://localhost:8081/showdrugs").then(res => setValues(res.data)).catch(err => console.log(err))
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/showdrugs`).then(res => setValues(res.data)).catch(err => console.log(err))
     
 }, [])
 
@@ -21,7 +21,7 @@ useEffect(() => {
 
 const handleDelete = async (id) => {
   try {
-    await axios.delete("http://localhost:8081/showdrugs/"+id)
+    await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/showdrugs/`+id)
     window.location.reload()
   } catch (error) {
     console.log(error)

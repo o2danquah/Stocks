@@ -23,7 +23,7 @@ const UpdateDrugs = () => {
     const date = currYear + "-" + currMonth + "-" + currDay;
 
        
-    axios.put("http://localhost:8081/update/"+id, {drugname, drugcategory, quantity, expirydate, date}).then(res => {
+    axios.put(`${process.env.REACT_APP_BACKEND_URL}/update/`+id, {drugname, drugcategory, quantity, expirydate, date}).then(res => {
       console.log(res);
       navigate("/showdrugs")
 
