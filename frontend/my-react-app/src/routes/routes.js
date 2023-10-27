@@ -5,7 +5,6 @@ import Login from "../pages/login"
 import UpdateDrugs from "../pages/update"
 import WelcomePage from "../pages/welcomepage"
 
-// eslint-disable-next-line
 export default [
     {
         path: "/",
